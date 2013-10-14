@@ -41,6 +41,18 @@
     self.tabBarController.viewControllers = @[homeVC,self.navigationController,aboutVC];
     self.window.rootViewController = self.tabBarController;
     
+    
+    [[UITabBar appearance] setSelectedImageTintColor:[UIColor whiteColor]];
+    [[UITabBar appearance] setTintColor:[UIColor lightGrayColor]];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:@{ UITextAttributeTextColor : [UIColor darkGrayColor] }
+                                             forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{ UITextAttributeTextColor : [UIColor darkGrayColor] }
+                                             forState:UIControlStateHighlighted];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{ UITextAttributeTextColor : [UIColor blackColor] }
+                                             forState:UIControlStateSelected];
+    
+    
     homeVC.tabBarItem.image = [UIImage imageNamed:@"home.png"];
     aboutVC.tabBarItem.image = [UIImage imageNamed:@"about.png"];
 

@@ -13,7 +13,7 @@
 #import <MessageUI/MFMailComposeViewController.h>
 
 
-@interface AboutViewController : UIViewController <UIScrollViewDelegate, MFMailComposeViewControllerDelegate, ADBannerViewDelegate, UIAlertViewDelegate>
+@interface AboutViewController : UIViewController <UIScrollViewDelegate, MFMailComposeViewControllerDelegate, UIAlertViewDelegate>
 {
  
     IBOutlet UIScrollView *scroller;
@@ -33,6 +33,5 @@
 @property (nonatomic, strong) IBOutlet UIView *contentView;
 
 
-@property (nonatomic, assign) BOOL bannerIsVisible;
 
 @end

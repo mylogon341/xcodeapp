@@ -72,7 +72,7 @@
    
     self.refreshControl = refreshControl;
     
-    
+    aSearchBar.tintColor = [UIColor lightGrayColor];
     
    refreshControl.tintColor = [UIColor whiteColor];
     

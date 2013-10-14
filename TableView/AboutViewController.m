@@ -19,7 +19,6 @@
 
     
     @synthesize scroller;
-    ADBannerView *_aBanner;
 
 
 
@@ -180,47 +179,18 @@
     
         [super viewDidLoad];
     [scroller setScrollEnabled:YES];
-    scroller.contentSize = CGSizeMake(320, 1180);
+    scroller.contentSize = CGSizeMake(320, 1220);
 
-    if ([ADBannerView instancesRespondToSelector:@selector(initWithAdType:)]) {
-        _aBanner = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
-    } else {
-        _aBanner = [[ADBannerView alloc] init];
-    }
-    _aBanner.delegate = self;
-    [self.view addSubview:_aBanner];
-    
-    
 }
 
-- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
-{
-    NSLog(@"didFailToReceiveAdWithError %@", error);
-
-    [_aBanner removeFromSuperview];
-}
-
-
-- (void)viewDidLayoutSubviews
-{
-    CGRect contentFrame = self.view.bounds, bannerFrame = CGRectZero;
-    
-     bannerFrame.size = [_aBanner sizeThatFits:contentFrame.size];
-    
-    if (_aBanner.bannerLoaded) {
-        contentFrame.size.height -= bannerFrame.size.height;
-        bannerFrame.origin.y = contentFrame.size.height;
-    } else {
-        bannerFrame.origin.y = contentFrame.size.height;
-    }
-    _aBanner.frame = contentFrame;
-}
 
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
+
+
 
 @end
 

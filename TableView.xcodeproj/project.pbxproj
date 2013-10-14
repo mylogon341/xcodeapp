@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C0623E71801B1A70030B9E0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C0623E61801B1A70030B9E0 /* AudioToolbox.framework */; };
-		3C0624F91801CADC0030B9E0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31F737F1773CCAB004C4D5B /* StoreKit.framework */; };
-		3C0624FB1801CBB70030B9E0 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C0624FA1801CBB70030B9E0 /* AdSupport.framework */; };
 		3C3F25BE17EF2D970038E833 /* grey_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C3F25BD17EF2D970038E833 /* grey_button.png */; };
 		3C5056D017E8EAD9009F6C10 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C5056CF17E8EAD9009F6C10 /* Images.xcassets */; };
 		3CD2043817EE5E0300949697 /* twitter-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD2043717EE5E0300949697 /* twitter-icon.png */; };
@@ -40,7 +37,6 @@
 		58AE9B43173FC0F40088975E /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58AE9B41173FC0F40088975E /* AboutViewController.xib */; };
 		A31F73791770F95E004C4D5B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31F73781770F95E004C4D5B /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A31F737C1770FDEA004C4D5B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A31F737B1770FDEA004C4D5B /* Reachability.m */; };
-		A31F737E1773C8EF004C4D5B /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31F737D1773C8EF004C4D5B /* iAd.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A32EDC3417244D31000BE7C3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A32EDC3317244D31000BE7C3 /* QuartzCore.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A32EDC3A172C3B6E000BE7C3 /* SecondDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A32EDC38172C3B6E000BE7C3 /* SecondDetailViewController.m */; };
 		A32EDC3B172C3B6E000BE7C3 /* SecondDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A32EDC39172C3B6E000BE7C3 /* SecondDetailViewController.xib */; };
@@ -120,12 +116,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C0624FB1801CBB70030B9E0 /* AdSupport.framework in Frameworks */,
-				3C0624F91801CADC0030B9E0 /* StoreKit.framework in Frameworks */,
-				3C0623E71801B1A70030B9E0 /* AudioToolbox.framework in Frameworks */,
 				3CD2044017EE6A4E00949697 /* MessageUI.framework in Frameworks */,
 				3CD2043E17EE67C700949697 /* Social.framework in Frameworks */,
-				A31F737E1773C8EF004C4D5B /* iAd.framework in Frameworks */,
 				A31F73791770F95E004C4D5B /* SystemConfiguration.framework in Frameworks */,
 				A346C41017514FD400E5CF36 /* MediaPlayer.framework in Frameworks */,
 				A32EDC3417244D31000BE7C3 /* QuartzCore.framework in Frameworks */,
