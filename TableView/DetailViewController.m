@@ -114,6 +114,7 @@
         cell.textLabel.numberOfLines = 0;
         cell.textLabel.font = [UIFont systemFontOfSize: 15];
         cell.detailTextLabel.textColor = [UIColor whiteColor];
+    
         
         
     }
