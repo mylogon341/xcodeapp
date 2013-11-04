@@ -14,13 +14,15 @@
 @interface SecondDetailViewController ()
 - (void)downloadText:(NSString *)link;
 - (void)play;
+- (void)playAll;
 - (void)done;
 @end
-
 
 @implementation SecondDetailViewController
 @synthesize run = _run;
 @synthesize mediaPlayer = _mediaPlayer;
+@synthesize qPlay = _qPlay;
+@synthesize playA;
 
 
 
@@ -45,9 +47,22 @@
 {
     [super viewDidLoad];
     
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(play)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle:@"Play" style:UIBarButtonItemStyleBordered target:self action:@selector(play)];
+    playA = [[UIBarButtonItem alloc] initWithTitle:@"Play All" style:UIBarButtonItemStyleBordered target:self action:@selector(playAll)];
+    UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc]
+                                   initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                   target:nil
+                                   action:nil];
+    [fixedSpace setWidth:30];
+    
+    NSArray *playArray = [[NSArray alloc] initWithObjects:addButton, fixedSpace, playA, nil];
+    
+    self.navigationItem.rightBarButtonItems = playArray;
     addButton.tintColor = [UIColor colorWithRed:(25/255.0) green:(200/250.0) blue:(110/255.0) alpha:1];
+    playA.tintColor = [UIColor colorWithRed:(25/255.0) green:(100/250.0) blue:(180/255.0) alpha:1];
+
+    
+   
     
     runnersInfoOriginalFrame = CGRectMake(0, 216, 320, 238);
 }
@@ -123,6 +138,31 @@
     [_mediaPlayer setFullscreen:YES animated:YES];
     [_mediaPlayer play];
 }
+
+
+-(void)playAll {
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(willEnterFullscreen:) name:MPMoviePlayerWillEnterFullscreenNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(willExitFullscreen:) name:MPMoviePlayerWillExitFullscreenNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enteredFullscreen:) name:MPMoviePlayerDidEnterFullscreenNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(exitedFullscreen:) name:MPMoviePlayerDidExitFullscreenNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished:) name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
+    
+  /*  NSURL *url = [NSURL URLWithString:[[self.run.videoLinks objectForKey:@"Vid"] objectAtIndex:selectedRow]];
+    UIGraphicsBeginImageContext(CGSizeMake(1,1));
+    
+    
+    
+    _mediaPlayer = [[MPMoviePlayerController alloc] initWithContentURL:url];
+        
+    _mediaPlayer.view.frame = self.view.frame;
+    [self.view addSubview:_mediaPlayer.view];
+    [_mediaPlayer setFullscreen:YES animated:YES];
+    [_mediaPlayer play];
+
+   */
+   
+   }
 
 
 - (void)done
@@ -206,6 +246,9 @@
     
     if (numberOfVideoLinks == 1) {
         pickerView.hidden = YES;
+        playA.enabled = NO;
+        playA.tintColor = [UIColor clearColor];
+        
         if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
             runnersInfo.frame = self.view.frame;
         } else {
@@ -213,6 +256,8 @@
         }
     } else if (numberOfVideoLinks > 1) {
         pickerView.hidden = NO;
+        playA.enabled = YES;
+        playA.tintColor = [UIColor colorWithRed:(25/255.0) green:(100/250.0) blue:(180/255.0) alpha:1];
         runnersInfo.frame = runnersInfoOriginalFrame;
     }
     

@@ -16,12 +16,16 @@
 
     IBOutlet UITextView *runnersInfo;
     IBOutlet UIPickerView *secondPicker;
+    IBOutlet UIBarButtonItem *playA;
     NSUInteger selectedRow;
     CGRect runnersInfoOriginalFrame;
 
 }
+
+@property (strong, nonatomic) UIBarButtonItem *playA;
 @property (strong, nonatomic) UIView *myView;
 @property (strong, nonatomic) RunDetail *run;
-@property(nonatomic,strong) MPMoviePlayerController *mediaPlayer;
+@property (nonatomic, strong) MPMoviePlayerController *mediaPlayer;
+@property (nonatomic, strong) AVQueuePlayer *qPlay;
 
 @end

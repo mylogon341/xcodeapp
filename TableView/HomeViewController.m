@@ -31,7 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self hometexts];
     [self checkReachability];
     
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
@@ -42,14 +42,38 @@
 -(void)viewDidAppear:(BOOL)animated{
     
 
-    
-    NSURL *url = [[NSURL alloc] initWithString:@"http://sdaapp.net/Text/hText.txt"];
+  /*
+    NSURL *url = [[NSURL alloc] initWithString:@""];
     
     NSString *string = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
     homeText.text = string;
-    
-    
+    */
+   // [self hometexts];
 }
+
+- (void)hometexts
+{
+    
+    if (self.homeText) {
+        //Here we start the background loading
+        dispatch_async(dispatch_queue_create("hometext", NULL), ^{
+            NSError *error;
+            //Here we load the text
+            NSString *string = [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://sdaapp.net/Text/hText.txt"]
+                                                            encoding:NSUTF8StringEncoding
+                                                               error:&error];
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                if (error) NSLog(@"Something went wrong: %@",error);
+                else {
+                    homeText.text = string;
+                }
+                //We've now successfully set the text
+                
+            });
+        });
+    }
+}
+
 
 -(void)checkReachability
 {

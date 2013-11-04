@@ -32,7 +32,6 @@
 		587E5A83172404A7005EA061 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 587E5A7F172404A7005EA061 /* about.png */; };
 		587E5A84172404A7005EA061 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 587E5A80172404A7005EA061 /* home.png */; };
 		58AE9B3C173FC0670088975E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AE9B3A173FC0670088975E /* HomeViewController.m */; };
-		58AE9B3D173FC0670088975E /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58AE9B3B173FC0670088975E /* HomeViewController.xib */; };
 		58AE9B42173FC0F40088975E /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AE9B40173FC0F40088975E /* AboutViewController.m */; };
 		58AE9B43173FC0F40088975E /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58AE9B41173FC0F40088975E /* AboutViewController.xib */; };
 		A31F73791770F95E004C4D5B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31F73781770F95E004C4D5B /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -90,7 +89,6 @@
 		587E5A80172404A7005EA061 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		58AE9B39173FC0670088975E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		58AE9B3A173FC0670088975E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		58AE9B3B173FC0670088975E /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		58AE9B3F173FC0F40088975E /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		58AE9B40173FC0F40088975E /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		58AE9B41173FC0F40088975E /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
@@ -241,7 +239,6 @@
 			children = (
 				58AE9B39173FC0670088975E /* HomeViewController.h */,
 				58AE9B3A173FC0670088975E /* HomeViewController.m */,
-				58AE9B3B173FC0670088975E /* HomeViewController.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -327,7 +324,6 @@
 				3CD2043817EE5E0300949697 /* twitter-icon.png in Resources */,
 				587E5A84172404A7005EA061 /* home.png in Resources */,
 				A32EDC3B172C3B6E000BE7C3 /* SecondDetailViewController.xib in Resources */,
-				58AE9B3D173FC0670088975E /* HomeViewController.xib in Resources */,
 				3CEA376117E53B18005289CF /* donate.gif in Resources */,
 				58AE9B43173FC0F40088975E /* AboutViewController.xib in Resources */,
 				3CD2043C17EE667000949697 /* REPORT.png in Resources */,
@@ -451,7 +447,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Luke Sadler (F9ZXT3C227)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Luke Sadler (EDM9ZMD64T)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Luke Sadler (F9ZXT3C227)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TableView/TableView-Prefix.pch";
@@ -463,8 +459,8 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "SDA App";
-				PROVISIONING_PROFILE = "CBE9EB9E-9417-42F1-B4CC-2EA281A5ECE2";
-				TARGETED_DEVICE_FAMILY = 1;
+				PROVISIONING_PROFILE = "BA0849B2-50D5-48F4-9F6E-3F84B31F9C28";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -486,8 +482,8 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "SDA App";
-				PROVISIONING_PROFILE = "CBE9EB9E-9417-42F1-B4CC-2EA281A5ECE2";
-				TARGETED_DEVICE_FAMILY = 1;
+				PROVISIONING_PROFILE = "BA0849B2-50D5-48F4-9F6E-3F84B31F9C28";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
