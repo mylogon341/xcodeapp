@@ -5,34 +5,42 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>F70D54AA-6CCD-40BF-AF6D-C897C15BDC5C</string>
+	<string>F8F3F4DB-527E-4B4A-90F2-44E72FDE879A</string>
 	<key>IDESourceControlProjectName</key>
 	<string>TableView</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>7EAE3518-F91D-430A-B1A9-3F53A499E29F</key>
-		<string>https://github.com/Hurblat/xcodeapp.git</string>
+		<key>9690247F-E972-466E-9A90-7B3011A16A68</key>
+		<string>https://github.com/mylogon341/xcodeapp.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>TableView.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>7EAE3518-F91D-430A-B1A9-3F53A499E29F</key>
-		<string>../..</string>
+		<key>9690247F-E972-466E-9A90-7B3011A16A68</key>
+		<string>../../../../app stuff/GITsdaApp</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/Hurblat/xcodeapp.git</string>
+	<string>https://github.com/mylogon341/xcodeapp.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>7EAE3518-F91D-430A-B1A9-3F53A499E29F</string>
+	<string>9690247F-E972-466E-9A90-7B3011A16A68</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>7EAE3518-F91D-430A-B1A9-3F53A499E29F</string>
+			<string>9690247F-E972-466E-9A90-7B3011A16A68</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GITsdaApp</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9690247F-E972-466E-9A90-7B3011A16A68</string>
 			<key>IDESourceControlWCCName</key>
 			<string>GITsdaApp</string>
 		</dict>
