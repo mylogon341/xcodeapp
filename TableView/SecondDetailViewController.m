@@ -23,6 +23,7 @@
 @synthesize mediaPlayer = _mediaPlayer;
 @synthesize qPlay = _qPlay;
 @synthesize playA;
+@synthesize vids = _vids;
 
 
 
@@ -61,8 +62,7 @@
     addButton.tintColor = [UIColor colorWithRed:(25/255.0) green:(200/250.0) blue:(110/255.0) alpha:1];
     playA.tintColor = [UIColor colorWithRed:(25/255.0) green:(100/250.0) blue:(180/255.0) alpha:1];
 
-    
-   
+    isPlayingAll = NO;
     
     runnersInfoOriginalFrame = CGRectMake(0, 216, 320, 238);
 }
@@ -100,7 +100,7 @@
     _mediaPlayer = nil;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
-
+/*
 - (void)playbackFinished:(NSNotification*)notification {
     NSNumber* reason = [[notification userInfo] objectForKey:MPMoviePlayerPlaybackDidFinishReasonUserInfoKey];
     switch ([reason intValue]) {
@@ -118,21 +118,19 @@
     }
     [_mediaPlayer setFullscreen:NO animated:YES];
 }
-
+*/
 - (void)play {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(willEnterFullscreen:) name:MPMoviePlayerWillEnterFullscreenNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(willExitFullscreen:) name:MPMoviePlayerWillExitFullscreenNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enteredFullscreen:) name:MPMoviePlayerDidEnterFullscreenNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(exitedFullscreen:) name:MPMoviePlayerDidExitFullscreenNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished:) name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
-    
-    NSURL *url = [NSURL URLWithString:[[self.run.videoLinks objectForKey:@"Vid"] objectAtIndex:selectedRow]];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(videoPlayBackDidFinish:) name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
+    currentPlayingPart = selectedRow;
+    NSURL *url = [NSURL URLWithString:[[self.run.videoLinks objectForKey:@"Vid"] objectAtIndex:currentPlayingPart]];
     UIGraphicsBeginImageContext(CGSizeMake(1,1));
     
-    
-    
     _mediaPlayer = [[MPMoviePlayerController alloc] initWithContentURL:url];
-    
+    isPlayingAll = NO;
     _mediaPlayer.view.frame = self.view.frame;
     [self.view addSubview:_mediaPlayer.view];
     [_mediaPlayer setFullscreen:YES animated:YES];
@@ -140,36 +138,30 @@
 }
 
 
--(void)playAll {
-    
+- (void)playAll {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(willEnterFullscreen:) name:MPMoviePlayerWillEnterFullscreenNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(willExitFullscreen:) name:MPMoviePlayerWillExitFullscreenNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enteredFullscreen:) name:MPMoviePlayerDidEnterFullscreenNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(exitedFullscreen:) name:MPMoviePlayerDidExitFullscreenNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished:) name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
-    
-  /*  NSURL *url = [NSURL URLWithString:[[self.run.videoLinks objectForKey:@"Vid"] objectAtIndex:selectedRow]];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(videoPlayBackDidFinish:) name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
+     currentPlayingPart = selectedRow;
+    NSURL *url = [NSURL URLWithString:[[self.run.videoLinks objectForKey:@"Vid"] objectAtIndex:currentPlayingPart]];
     UIGraphicsBeginImageContext(CGSizeMake(1,1));
     
-    
-    
     _mediaPlayer = [[MPMoviePlayerController alloc] initWithContentURL:url];
-        
+       isPlayingAll = YES;
     _mediaPlayer.view.frame = self.view.frame;
     [self.view addSubview:_mediaPlayer.view];
     [_mediaPlayer setFullscreen:YES animated:YES];
     [_mediaPlayer play];
-
-   */
-   
-   }
+}
 
 
 - (void)done
 {
     [_mediaPlayer stop];
     [_mediaPlayer.view removeFromSuperview];
-    
+    currentPlayingPart = 0;
     [self performSelector:@selector(viewDidLoad) withObject:nil afterDelay:0.0];
 
 }
@@ -179,24 +171,34 @@
 -(void)videoPlayBackDidFinish:(NSNotification*)aNotification {
     
    
-    [_mediaPlayer setFullscreen:NO animated:YES];
+  //  [_mediaPlayer setFullscreen:NO animated:YES];
     
    NSNumber* reason = [[aNotification userInfo] objectForKey:MPMoviePlayerPlaybackDidFinishReasonUserInfoKey];
-   switch ([reason intValue]) {
-      case MPMovieFinishReasonPlaybackEnded:
-            //Put code here to autoplay next one if you wanted
-        
-          [self done];
-         break;
-     case MPMovieFinishReasonPlaybackError:
-            //Handle error maybe?
+    switch ([reason intValue]) {
+        case MPMovieFinishReasonPlaybackEnded:
+        //Put code here to autoplay next one if you wanted
+        if (isPlayingAll) {
+            if (!(currentPlayingPart + 2 > numberOfVideoLinks)) {
+                NSURL *url = [NSURL URLWithString:[[self.run.videoLinks objectForKey:@"Vid"] objectAtIndex:currentPlayingPart +=1]];
+                [_mediaPlayer setContentURL:url];
+                _mediaPlayer.movieSourceType = MPMovieSourceTypeUnknown;
+                [_mediaPlayer play];
+            } else {
+                [self done];
+            }
+        } else {
+            [self done];
+        }
+        break;
+    case MPMovieFinishReasonPlaybackError:
+        //Handle error maybe?
         [self done];
         break;
-        case MPMovieFinishReasonUserExited:
-           [self done];
-         break;
-      default:
-         break;
+    case MPMovieFinishReasonUserExited:
+        [self done];
+        break;
+    default:
+        break;
   }
     
     if (_mediaPlayer == [aNotification object])
@@ -242,7 +244,7 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    int numberOfVideoLinks = [[self.run.videoLinks objectForKey:@"PickerItems"] count];
+     numberOfVideoLinks = [[self.run.videoLinks objectForKey:@"PickerItems"] count];
     
     if (numberOfVideoLinks == 1) {
         pickerView.hidden = YES;

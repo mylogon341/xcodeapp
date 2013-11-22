@@ -38,14 +38,14 @@
     masterViewController.tabBarItem.image = [UIImage imageNamed:@"game.png"];
 
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[homeVC,self.navigationController,aboutVC];
+    self.tabBarController.viewControllers = @[homeVC, self.navigationController,aboutVC];
     self.window.rootViewController = self.tabBarController;
     
     
     [[UITabBar appearance] setSelectedImageTintColor:[UIColor whiteColor]];
-    [[UITabBar appearance] setTintColor:[UIColor lightGrayColor]];
+    [[UITabBar appearance] setTintColor:[UIColor lightTextColor]];
     
-    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor darkGrayColor] }
+    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor blackColor] }
                                              forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor darkGrayColor] }
                                              forState:UIControlStateHighlighted];
@@ -54,7 +54,7 @@
     
     
     homeVC.tabBarItem.image = [UIImage imageNamed:@"home.png"];
-    aboutVC.tabBarItem.image = [UIImage imageNamed:@"about.png"];
+    aboutVC.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMore tag:0];
 
     
     [self.window makeKeyAndVisible];

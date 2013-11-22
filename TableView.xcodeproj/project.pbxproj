@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		3C3F25BE17EF2D970038E833 /* grey_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C3F25BD17EF2D970038E833 /* grey_button.png */; };
 		3C5056D017E8EAD9009F6C10 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C5056CF17E8EAD9009F6C10 /* Images.xcassets */; };
+		3CB8F1E3183C28E2006F8887 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB8F1E2183C28E2006F8887 /* HomeViewController.xib */; };
+		3CB8F1E7183C3866006F8887 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB8F1E6183C3866006F8887 /* home.png */; };
+		3CB8F1EF183C5515006F8887 /* 40icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB8F1E8183C5515006F8887 /* 40icon.png */; };
+		3CB8F1F0183C5515006F8887 /* 50icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB8F1E9183C5515006F8887 /* 50icon.png */; };
+		3CB8F1F1183C5515006F8887 /* 72icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB8F1EA183C5515006F8887 /* 72icon.png */; };
+		3CB8F1F2183C5515006F8887 /* 76icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB8F1EB183C5515006F8887 /* 76icon.png */; };
+		3CB8F1F3183C5515006F8887 /* 100.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB8F1EC183C5515006F8887 /* 100.png */; };
+		3CB8F1F4183C5515006F8887 /* 144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB8F1ED183C5515006F8887 /* 144.png */; };
+		3CB8F1F5183C5515006F8887 /* 152.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB8F1EE183C5515006F8887 /* 152.png */; };
 		3CD2043817EE5E0300949697 /* twitter-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD2043717EE5E0300949697 /* twitter-icon.png */; };
 		3CD2043A17EE60F900949697 /* failbook.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD2043917EE60F900949697 /* failbook.png */; };
 		3CD2043C17EE667000949697 /* REPORT.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD2043B17EE667000949697 /* REPORT.png */; };
@@ -30,7 +39,6 @@
 		587E5A751724009C005EA061 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 587E5A731724009C005EA061 /* DetailViewController.xib */; };
 		587E5A82172404A7005EA061 /* game.png in Resources */ = {isa = PBXBuildFile; fileRef = 587E5A7E172404A7005EA061 /* game.png */; };
 		587E5A83172404A7005EA061 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 587E5A7F172404A7005EA061 /* about.png */; };
-		587E5A84172404A7005EA061 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 587E5A80172404A7005EA061 /* home.png */; };
 		58AE9B3C173FC0670088975E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AE9B3A173FC0670088975E /* HomeViewController.m */; };
 		58AE9B42173FC0F40088975E /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AE9B40173FC0F40088975E /* AboutViewController.m */; };
 		58AE9B43173FC0F40088975E /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58AE9B41173FC0F40088975E /* AboutViewController.xib */; };
@@ -57,6 +65,15 @@
 		3C5056CD17E8E98E009F6C10 /* spotlight58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spotlight58.png; path = ../spotlight58.png; sourceTree = "<group>"; };
 		3C5056CE17E8E99F009F6C10 /* spotlight80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spotlight80.png; path = ../spotlight80.png; sourceTree = "<group>"; };
 		3C5056CF17E8EAD9009F6C10 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3CB8F1E2183C28E2006F8887 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		3CB8F1E6183C3866006F8887 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		3CB8F1E8183C5515006F8887 /* 40icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 40icon.png; sourceTree = "<group>"; };
+		3CB8F1E9183C5515006F8887 /* 50icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 50icon.png; sourceTree = "<group>"; };
+		3CB8F1EA183C5515006F8887 /* 72icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 72icon.png; sourceTree = "<group>"; };
+		3CB8F1EB183C5515006F8887 /* 76icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 76icon.png; sourceTree = "<group>"; };
+		3CB8F1EC183C5515006F8887 /* 100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 100.png; sourceTree = "<group>"; };
+		3CB8F1ED183C5515006F8887 /* 144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 144.png; sourceTree = "<group>"; };
+		3CB8F1EE183C5515006F8887 /* 152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 152.png; sourceTree = "<group>"; };
 		3CD2043717EE5E0300949697 /* twitter-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-icon.png"; sourceTree = "<group>"; };
 		3CD2043917EE60F900949697 /* failbook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = failbook.png; path = ../failbook.png; sourceTree = "<group>"; };
 		3CD2043B17EE667000949697 /* REPORT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = REPORT.png; sourceTree = "<group>"; };
@@ -86,7 +103,6 @@
 		587E5A741724009C005EA061 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
 		587E5A7E172404A7005EA061 /* game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game.png; sourceTree = "<group>"; };
 		587E5A7F172404A7005EA061 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
-		587E5A80172404A7005EA061 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		58AE9B39173FC0670088975E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		58AE9B3A173FC0670088975E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		58AE9B3F173FC0F40088975E /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
@@ -190,6 +206,13 @@
 				3C5056CB17E8E8CD009F6C10 /* icon Large120.png */,
 				3CEA376017E53B18005289CF /* donate.gif */,
 				3CEA375E17E4EB43005289CF /* donate.jpg */,
+				3CB8F1E8183C5515006F8887 /* 40icon.png */,
+				3CB8F1E9183C5515006F8887 /* 50icon.png */,
+				3CB8F1EA183C5515006F8887 /* 72icon.png */,
+				3CB8F1EB183C5515006F8887 /* 76icon.png */,
+				3CB8F1EC183C5515006F8887 /* 100.png */,
+				3CB8F1ED183C5515006F8887 /* 144.png */,
+				3CB8F1EE183C5515006F8887 /* 152.png */,
 				A377C87F175AAF1800F6CC73 /* 114.png */,
 				A377C87D175AAF1300F6CC73 /* 57.png */,
 				A377C87B175AADE200F6CC73 /* Default-568h@2x.png */,
@@ -199,9 +222,9 @@
 				587E5A5B1724009B005EA061 /* InfoPlist.strings */,
 				587E5A5E1724009B005EA061 /* main.m */,
 				587E5A601724009B005EA061 /* TableView-Prefix.pch */,
+				3CB8F1E6183C3866006F8887 /* home.png */,
 				587E5A7E172404A7005EA061 /* game.png */,
 				587E5A7F172404A7005EA061 /* about.png */,
-				587E5A80172404A7005EA061 /* home.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -239,6 +262,7 @@
 			children = (
 				58AE9B39173FC0670088975E /* HomeViewController.h */,
 				58AE9B3A173FC0670088975E /* HomeViewController.m */,
+				3CB8F1E2183C28E2006F8887 /* HomeViewController.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -314,25 +338,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				587E5A5D1724009B005EA061 /* InfoPlist.strings in Resources */,
+				3CB8F1F0183C5515006F8887 /* 50icon.png in Resources */,
 				587E5A721724009C005EA061 /* MasterViewController.xib in Resources */,
+				3CB8F1E7183C3866006F8887 /* home.png in Resources */,
 				587E5A751724009C005EA061 /* DetailViewController.xib in Resources */,
 				3C3F25BE17EF2D970038E833 /* grey_button.png in Resources */,
 				587E5A82172404A7005EA061 /* game.png in Resources */,
+				3CB8F1E3183C28E2006F8887 /* HomeViewController.xib in Resources */,
 				3CEA375F17E4EB43005289CF /* donate.jpg in Resources */,
 				587E5A83172404A7005EA061 /* about.png in Resources */,
 				3CD2043A17EE60F900949697 /* failbook.png in Resources */,
 				3CD2043817EE5E0300949697 /* twitter-icon.png in Resources */,
-				587E5A84172404A7005EA061 /* home.png in Resources */,
 				A32EDC3B172C3B6E000BE7C3 /* SecondDetailViewController.xib in Resources */,
 				3CEA376117E53B18005289CF /* donate.gif in Resources */,
 				58AE9B43173FC0F40088975E /* AboutViewController.xib in Resources */,
+				3CB8F1EF183C5515006F8887 /* 40icon.png in Resources */,
 				3CD2043C17EE667000949697 /* REPORT.png in Resources */,
 				3C5056D017E8EAD9009F6C10 /* Images.xcassets in Resources */,
+				3CB8F1F4183C5515006F8887 /* 144.png in Resources */,
 				A377C878175AAD6600F6CC73 /* Default.png in Resources */,
 				A377C87A175AADD300F6CC73 /* Default@2x.png in Resources */,
 				A377C87C175AADE200F6CC73 /* Default-568h@2x.png in Resources */,
+				3CB8F1F5183C5515006F8887 /* 152.png in Resources */,
+				3CB8F1F3183C5515006F8887 /* 100.png in Resources */,
 				A377C87E175AAF1300F6CC73 /* 57.png in Resources */,
 				A377C880175AAF1800F6CC73 /* 114.png in Resources */,
+				3CB8F1F1183C5515006F8887 /* 72icon.png in Resources */,
+				3CB8F1F2183C5515006F8887 /* 76icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,22 +477,19 @@
 		587E5A791724009C005EA061 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Luke Sadler (EDM9ZMD64T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Luke Sadler (F9ZXT3C227)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Luke Sadler (EDM9ZMD64T)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TableView/TableView-Prefix.pch";
 				INFOPLIST_FILE = "TableView/TableView-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/lukesadler/Desktop/GoogleAdMobAdsSdkiOS-6.5.1",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "SDA App";
 				PROVISIONING_PROFILE = "BA0849B2-50D5-48F4-9F6E-3F84B31F9C28";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -468,7 +497,7 @@
 		587E5A7A1724009C005EA061 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Luke Sadler (F9ZXT3C227)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Luke Sadler (F9ZXT3C227)";
@@ -476,14 +505,11 @@
 				GCC_PREFIX_HEADER = "TableView/TableView-Prefix.pch";
 				INFOPLIST_FILE = "TableView/TableView-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/lukesadler/Desktop/GoogleAdMobAdsSdkiOS-6.5.1",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "SDA App";
 				PROVISIONING_PROFILE = "BA0849B2-50D5-48F4-9F6E-3F84B31F9C28";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

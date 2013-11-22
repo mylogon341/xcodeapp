@@ -10,7 +10,6 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
 @class RunDetail;
-
 @interface SecondDetailViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 {
 
@@ -18,13 +17,15 @@
     IBOutlet UIPickerView *secondPicker;
     IBOutlet UIBarButtonItem *playA;
     NSUInteger selectedRow;
+    NSUInteger numberOfVideoLinks;
+    NSUInteger currentPlayingPart;
     CGRect runnersInfoOriginalFrame;
-
+    BOOL isPlayingAll;
 }
 
 @property (strong, nonatomic) UIBarButtonItem *playA;
-@property (strong, nonatomic) UIView *myView;
 @property (strong, nonatomic) RunDetail *run;
+@property (strong, nonatomic) RunDetail *vids;
 @property (nonatomic, strong) MPMoviePlayerController *mediaPlayer;
 @property (nonatomic, strong) AVQueuePlayer *qPlay;
 
