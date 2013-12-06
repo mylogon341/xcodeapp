@@ -20,6 +20,7 @@
     BOOL isFiltered;
    IBOutlet UIActivityIndicatorView *activity;
     UIView *subview;
+   
 
  
     Reachability* hostReach;
@@ -28,6 +29,8 @@
     
     
 }
+@property (nonatomic, strong) NSArray *tableData;
+@property (nonatomic, strong) NSArray *indexOfNumbers;
 @property (nonatomic, strong) UIActivityIndicatorView *activity;
 @property (nonatomic, retain) UIView *subView;
 @property (nonatomic, strong) NSMutableArray *objects;

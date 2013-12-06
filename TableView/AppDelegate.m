@@ -7,10 +7,11 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Appirater.h"
 #import "HomeViewController.h"
 #import "MasterViewController.h"
 #import "AboutViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @implementation AppDelegate
 @synthesize forceLandscapeRight;
@@ -19,6 +20,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [Appirater setAppId:@"664870017"];
+    
     
     self.allowRotation = NO;
     self.forceLandscapeRight = NO;
@@ -29,21 +33,30 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    
+    
     // Override point for customization after application launch.
     
     UIViewController *homeVC = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
     MasterViewController *masterViewController = [[MasterViewController alloc] initWithNibName:@"MasterViewController" bundle:nil];
     UIViewController *aboutVC = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil];
+    
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
+    self.aboutNav = [[UINavigationController alloc] initWithRootViewController:aboutVC];
+    
     masterViewController.tabBarItem.image = [UIImage imageNamed:@"game.png"];
+    
 
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[homeVC, self.navigationController,aboutVC];
+    self.tabBarController.viewControllers = @[homeVC, self.navigationController,self.aboutNav];
     self.window.rootViewController = self.tabBarController;
     
     
+   // self.navigationController.navigationBar.alpha = 0.9;
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     [[UITabBar appearance] setSelectedImageTintColor:[UIColor whiteColor]];
-    [[UITabBar appearance] setTintColor:[UIColor lightTextColor]];
+    [[UITabBar appearance] setTintColor:[UIColor darkGrayColor]];
+    [[UITabBar appearance] setAlpha:0.9];
     
     [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor blackColor] }
                                              forState:UIControlStateNormal];
@@ -54,8 +67,10 @@
     
     
     homeVC.tabBarItem.image = [UIImage imageNamed:@"home.png"];
+
     aboutVC.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMore tag:0];
 
+    [Appirater appLaunched:YES];
     
     [self.window makeKeyAndVisible];
     
@@ -99,6 +114,9 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
+    
+    [Appirater appEnteredForeground:YES];
+    
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 

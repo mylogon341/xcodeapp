@@ -9,7 +9,9 @@
 #import "AboutViewController.h"
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
-
+#import "AppDelegate.h"
+#import "MasterViewController.h"
+#import "HomeViewController.h"
 
 @interface AboutViewController ()
 
@@ -17,8 +19,8 @@
 
 @implementation AboutViewController
 
-    
-    @synthesize scroller;
+//@synthesize knownView;
+@synthesize scroller;
 
 
 
@@ -38,17 +40,17 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=C9TTCLA8A2MNU"]];
 }
 
-- (IBAction)followT:(id)sender
-{
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.twitter.com/lukesadler"]];
 
+- (IBAction)followT:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/intent/user?screen_name=mylogon_"]];
 }
+
 - (IBAction)tweet:(id)sender {
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController
                                                composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [tweetSheet setInitialText:@"#SDAApp Check it out on iOS - it's free"];
+        [tweetSheet setInitialText:@"@mylogon_ #SDAApp Check it out on iOS - it's free! https://t.co/pi9quQwCtm"];
         [self presentViewController:tweetSheet animated:YES completion:nil];
     }
 }
@@ -74,7 +76,7 @@
         controller.completionHandler =myBlock;
         
         //Adding the Text to the facebook post value from iOS
-        [controller setInitialText:@"Check out the SDA App on iOS - it's free!"];
+        [controller setInitialText:@"Check out 'SDA App' on iOS - it's free! https://t.co/pi9quQwCtm"];
         [controller addImage:[UIImage imageNamed:@"spotlight80.png"]];
         
         [self presentViewController:controller animated:YES completion:Nil];
@@ -103,21 +105,28 @@
 
     - (IBAction)issues:(id)sender {
         
+       
         
-        UIAlertView *errorView;
+        UIViewController *webViewController = [[UIViewController alloc] init];
         
-        errorView = [[UIAlertView alloc]
-                  initWithTitle: NSLocalizedString(@"Issues", @"Issues")
-                  message: NSLocalizedString(@"You're about to be transfereed to Safari. Make sure you come back...", @"Issues")
-                  delegate: self
-                  cancelButtonTitle: NSLocalizedString(@"I will", @"Issues") otherButtonTitles: nil];
-        errorView.tag = 102;
+      
+                                               
         
-        [errorView show];
-    }
-
-
+        uiWebView = [[UIWebView alloc] initWithFrame:self.view.frame];
+        
+        [uiWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.sdaapp.net/issues.rtf"]]];
+        
+[[NSURLCache sharedURLCache] removeAllCachedResponses];
+        
+        [webViewController.view addSubview: uiWebView];
+        
     
+        [self.navigationController pushViewController:webViewController animated:YES];
+   
+
+}
+
+
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
         if (alertView.tag == 101) {
@@ -142,11 +151,16 @@
             }
         else if (alertView.tag == 102)
             {
-                   NSLog(@"ok");
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.sdaapp.net/issues.rtf"]];
+
+   
+                NSLog(@"OK pressed");
+            
+                //  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.sdaapp.net/issues.rtf"]];
       
 }
 }
+
+
 
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
@@ -179,9 +193,12 @@
     
         [super viewDidLoad];
     [scroller setScrollEnabled:YES];
-    scroller.contentSize = CGSizeMake(320, 1220);
-
+    scroller.contentSize = CGSizeMake(320, 1180);
+    
+    
 }
+
+
 
 
 

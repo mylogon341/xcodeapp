@@ -17,6 +17,8 @@
 @synthesize objects = _objects;
 @synthesize subView;
 @synthesize activity;
+@synthesize tableData;
+@synthesize indexOfNumbers;
 
 
 
@@ -60,13 +62,12 @@
     [super viewDidLoad];
     
     [self.tableView setContentOffset:CGPointMake(0,44) animated:NO];
-
-    
   
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     
     //refreshControl.attributedTitle = [[NSAttributedString alloc]initWithString:@"Pull to Refresh"];
 
+    self.tableView.backgroundColor = [UIColor lightGrayColor];
     
     [refreshControl addTarget:self action:@selector(beginRefreshing)forControlEvents:UIControlEventValueChanged];
    
@@ -80,6 +81,9 @@
     [self.view addSubview:activity];
     [activity startAnimating];
     [self loadList];
+    
+    
+    
   
     
 }
@@ -95,7 +99,8 @@
     NSString *lastupdated = [NSString stringWithFormat:@"Last Updated on %@",[formattedDate stringFromDate:[NSDate date]]];
     
     self.refreshControl.attributedTitle = [[NSAttributedString alloc]initWithString:lastupdated];
-    
+    NSLog(@"nav controller = %@", self.navigationController);
+
 
     [self loadList];
     
@@ -222,6 +227,7 @@
     return 1;
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return (isFiltered) ? [searchArray count] : [self.objects count];
@@ -258,8 +264,31 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 60;
+    
+}
+//////////
+
+
+
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
+{
+    NSString *sectionTitle = nil;
+    NSComparisonResult result;
+    int i;
+    
+    for(i = 0; i < tableView.numberOfSections; i++)
+    {
+        sectionTitle = [self tableView:tableView titleForHeaderInSection:i];
+        result = [title compare:sectionTitle];
+        
+        if(result != NSOrderedDescending)
+            break;
+    }
+    
+    return (MIN (i, (tableView.numberOfSections - 1)));
 }
 
+///////////
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -289,6 +318,8 @@
     self.detailViewController.runDetails = runDetails;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.navigationController pushViewController:self.detailViewController animated:YES];
+    NSLog(@"nav controller = %@", self.navigationController);
+
 }
 
 @end

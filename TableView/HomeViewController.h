@@ -12,8 +12,10 @@
 
 {
 
+    IBOutlet UIImageView *banner;
     IBOutlet UITextView *homeText;
     __weak IBOutlet NSLayoutConstraint *homeTextBottomConstraint;
+    BOOL statusBarHidden;
 }
 - (void)checkForWIFIConnection;
 

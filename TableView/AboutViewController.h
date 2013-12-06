@@ -7,17 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <iAd/iAd.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 
+//@class known;
 
 @interface AboutViewController : UIViewController <UIScrollViewDelegate, MFMailComposeViewControllerDelegate, UIAlertViewDelegate>
 {
  
     IBOutlet UIScrollView *scroller;
-
+    UIWebView *uiWebView;
 
 }
 
@@ -32,6 +32,7 @@
 @property (strong, nonatomic) IBOutlet UIScrollView *scroller;
 @property (nonatomic, strong) IBOutlet UIView *contentView;
 
+//@property (nonatomic, strong) known *knownView;
 
 
 @end

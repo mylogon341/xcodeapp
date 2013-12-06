@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>F8F3F4DB-527E-4B4A-90F2-44E72FDE879A</string>
+	<string>514ACB9B-1A8F-491F-80C2-512FB2BDF1C8</string>
 	<key>IDESourceControlProjectName</key>
 	<string>TableView</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -18,7 +18,7 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>9690247F-E972-466E-9A90-7B3011A16A68</key>
-		<string>../../../../app stuff/GITsdaApp</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/mylogon341/xcodeapp.git</string>
@@ -28,14 +28,6 @@
 	<string>9690247F-E972-466E-9A90-7B3011A16A68</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>9690247F-E972-466E-9A90-7B3011A16A68</string>
-			<key>IDESourceControlWCCName</key>
-			<string>GITsdaApp</string>
-		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

@@ -30,25 +30,47 @@
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
     [self hometexts];
     [self checkReachability];
+    
+    self.view.backgroundColor = [UIColor blackColor];
+    
+    UIImage *header = [UIImage imageNamed:@"headerGray.jpg"];
+    banner = [[UIImageView alloc] initWithImage:header];
+    //[banner setFrame:self.view.frame];
+    [banner setFrame:CGRectMake(0, 0, 320, 135)];
+    [self.view addSubview:banner];
+    
+    
+    self.homeText.backgroundColor = [UIColor colorWithRed:(124/255.0) green:(124/255.0) blue:(124/255.0) alpha:1] ;
+    homeText.textColor = [UIColor blackColor];
+ //   [homeText setFrame:CGRectMake(0, 135, 320, 400)];
+   // [self.view addSubview:homeText];
     
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
         homeTextBottomConstraint.constant = 0; // This constraint is only needed on iOS 7.
     }
 }
 
--(void)viewDidAppear:(BOOL)animated{
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    if(statusBarHidden == NO)
+    {
+        self.navigationController.navigationBar.frame = CGRectOffset(self.navigationController.navigationBar.frame, 0.0, -20.0);
+        statusBarHidden = YES;
+        
+    }
     
 
-  /*
-    NSURL *url = [[NSURL alloc] initWithString:@""];
-    
-    NSString *string = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
-    homeText.text = string;
-    */
-   // [self hometexts];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
 }
 
 - (void)hometexts
