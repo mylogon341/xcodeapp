@@ -56,6 +56,8 @@
                                    action:nil];
     [fixedSpace setWidth:30];
     
+    secondPicker.backgroundColor = [UIColor lightGrayColor];
+    
     NSArray *playArray = [[NSArray alloc] initWithObjects:addButton, fixedSpace, playA, nil];
     
     self.navigationItem.rightBarButtonItems = playArray;

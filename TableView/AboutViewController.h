@@ -13,7 +13,7 @@
 
 //@class known;
 
-@interface AboutViewController : UIViewController <UIScrollViewDelegate, MFMailComposeViewControllerDelegate, UIAlertViewDelegate>
+@interface AboutViewController : UIViewController <UIScrollViewDelegate, MFMailComposeViewControllerDelegate, UIAlertViewDelegate,UIBarPositioningDelegate, UIToolbarDelegate>
 {
  
     IBOutlet UIScrollView *scroller;
@@ -31,6 +31,7 @@
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scroller;
 @property (nonatomic, strong) IBOutlet UIView *contentView;
+@property (strong, nonatomic) IBOutlet UINavigationBar *aboutNavBar;
 
 //@property (nonatomic, strong) known *knownView;
 

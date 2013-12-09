@@ -10,7 +10,12 @@
 #import "Reachability.h"
 
 @interface HomeViewController ()
+
+@property (nonatomic, strong) CALayer *extraColorLayer;
+
 @end
+
+static CGFloat const kDefaultColorLayerOpacity = 0.5f;
 
 @implementation HomeViewController
 @synthesize homeText;
@@ -25,9 +30,21 @@
     return self;
 }
 
-
-
-
+/*
+- (void)setBarTintColor:(UIColor *)barTintColor
+{
+    //[super setBarTintColor:barTintColor];
+    if (self.extraColorLayer == nil) {
+        // this all only applies to 7.0 - 7.0.2
+        if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0.3" options:NSNumericSearch] == NSOrderedAscending) {
+            self.extraColorLayer = [CALayer layer];
+            self.extraColorLayer.opacity = self.extraColorLayerOpacity;
+            [self.view.layer addSublayer:self.extraColorLayer];
+        }
+    }
+    self.extraColorLayer.backgroundColor = barTintColor.CGColor;
+}
+*/
 - (void)viewDidLoad
 {
     
@@ -40,14 +57,17 @@
     UIImage *header = [UIImage imageNamed:@"headerGray.jpg"];
     banner = [[UIImageView alloc] initWithImage:header];
     //[banner setFrame:self.view.frame];
-    [banner setFrame:CGRectMake(0, 0, 320, 135)];
+    [banner setFrame:CGRectMake(0, 10, 320, 130)];
     [self.view addSubview:banner];
     
     
+    
     self.homeText.backgroundColor = [UIColor colorWithRed:(124/255.0) green:(124/255.0) blue:(124/255.0) alpha:1] ;
-    homeText.textColor = [UIColor blackColor];
- //   [homeText setFrame:CGRectMake(0, 135, 320, 400)];
-   // [self.view addSubview:homeText];
+    
+    homeText.textColor = [UIColor whiteColor];
+    
+ // [homeText setFrame:CGRectMake(0, 135, 320, 400)];
+ // [self.view addSubview:homeText];
     
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
         homeTextBottomConstraint.constant = 0; // This constraint is only needed on iOS 7.

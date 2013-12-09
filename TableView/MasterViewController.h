@@ -20,7 +20,6 @@
     BOOL isFiltered;
    IBOutlet UIActivityIndicatorView *activity;
     UIView *subview;
-   
 
  
     Reachability* hostReach;

@@ -21,6 +21,7 @@
 
 //@synthesize knownView;
 @synthesize scroller;
+@synthesize aboutNavBar;
 
 
 
@@ -35,6 +36,17 @@
 }
 
 
+- (void)viewDidLoad
+{
+    
+    [super viewDidLoad];
+    [scroller setScrollEnabled:YES];
+    scroller.contentSize = CGSizeMake(320, 1180);
+    self.contentView.backgroundColor = [UIColor blackColor] ;
+        
+
+}
+
 - (IBAction)donate:(id)sender
 {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=C9TTCLA8A2MNU"]];
@@ -43,6 +55,7 @@
 
 - (IBAction)followT:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/intent/user?screen_name=mylogon_"]];
+    
 }
 
 - (IBAction)tweet:(id)sender {
@@ -54,6 +67,8 @@
         [self presentViewController:tweetSheet animated:YES completion:nil];
     }
 }
+
+
 
 - (IBAction)failbook:(id)sender {
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
@@ -84,11 +99,16 @@
     }
     else{
         NSLog(@"UnAvailable");
+
+    
+    
     }
     
 }
+
+
     
-- (IBAction)report:(id)sender {
+- (IBAction)report:(id)sender {    
     
     UIAlertView *errorView;
     
@@ -96,11 +116,12 @@
                  initWithTitle: NSLocalizedString(@"Logging", @"Logging")
                  message: NSLocalizedString(@"Please enter as much detail as you can about the error/ fault you have experienced. Thank you", @"Logging")
                  delegate: self
-                 cancelButtonTitle: NSLocalizedString(@"OK", @"Logging") otherButtonTitles: nil];
+                 cancelButtonTitle: NSLocalizedString(@"OK", @"Logging") otherButtonTitles: @"It doesn't matter...", nil];
     errorView.tag = 101;
     
     
       [errorView show];
+    
 }
 
     - (IBAction)issues:(id)sender {
@@ -158,9 +179,13 @@
                 //  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.sdaapp.net/issues.rtf"]];
       
 }
+    
+    if (alertView.tag == 103) {
+        
+        NSLog(@"facebook ok");
+        
+    }
 }
-
-
 
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
@@ -185,20 +210,6 @@
     // Close the Mail Interface
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
-
-
-
-- (void)viewDidLoad
-{
-    
-        [super viewDidLoad];
-    [scroller setScrollEnabled:YES];
-    scroller.contentSize = CGSizeMake(320, 1180);
-    
-    
-}
-
-
 
 
 

@@ -19,6 +19,7 @@
 }
 - (void)checkForWIFIConnection;
 
+//@property (nonatomic, assign) CGFloat extraColorLayerOpacity UI_APPEARANCE_SELECTOR;
 
 @property(strong, nonatomic) UITextView *homeText;
 @end

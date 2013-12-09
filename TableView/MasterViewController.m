@@ -67,13 +67,39 @@
     
     //refreshControl.attributedTitle = [[NSAttributedString alloc]initWithString:@"Pull to Refresh"];
 
-    self.tableView.backgroundColor = [UIColor lightGrayColor];
     
     [refreshControl addTarget:self action:@selector(beginRefreshing)forControlEvents:UIControlEventValueChanged];
    
     self.refreshControl = refreshControl;
     
-    aSearchBar.tintColor = [UIColor lightGrayColor];
+    
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+    
+    
+    aSearchBar.tintColor = [UIColor blackColor];
+}
+else{
+        
+        for (UIView *searchView in aSearchBar.subviews)
+    {
+        for (UIView *secondLevelSubview in searchView.subviews){
+            if ([secondLevelSubview isKindOfClass:[UITextField class]])
+            {
+                UITextField *searchBarTextField = (UITextField *)secondLevelSubview;
+                
+                //set font color here
+                searchBarTextField.textColor = [UIColor whiteColor];
+                
+                break;
+            }
+
+        }}
+     
+        self.tableView.backgroundColor = [UIColor darkGrayColor];
+
+        
+    }
+    
     
    refreshControl.tintColor = [UIColor whiteColor];
     
@@ -211,7 +237,7 @@
     aSearchBar.text = @"";
     [aSearchBar resignFirstResponder];
     isFiltered = NO;
-    aSearchBar.backgroundColor = [UIColor lightGrayColor];
+    aSearchBar.backgroundColor = [UIColor grayColor];
     if (floor(NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_6_1)) {
         [self.tableView setContentOffset:CGPointMake(0, 44) animated:YES];
     } else {
